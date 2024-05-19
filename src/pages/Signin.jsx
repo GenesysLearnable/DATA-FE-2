@@ -1,7 +1,7 @@
 import React from 'react'
-import { Button } from '../components/Button'
-import { Inputs } from '../components/Inputs'
-import './Pages.css'
+import { Button } from '../components/Button';
+import { Inputs } from '../components/Inputs';
+import './Pages.css';
 
 
 
@@ -63,4 +63,4 @@ const Signin = () => {
   )
 }
 
-export default Signin
+export default Signin;
