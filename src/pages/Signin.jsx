@@ -1,13 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { Button } from '../components/Button';
 import { Inputs } from '../components/Inputs';
+import { PopupModal } from '../components/PopupModal';
 import './Pages.css';
 
 
-
 const Signin = () => {
-  return (
-    <main className='mainStyle'>
+    const [openPopUp, setOpenPopUp] = useState(false);     //To handle the display of the popup 
+
+    const handleForgotPassword = () => {
+        setOpenPopUp(true);
+    }
+
+    const afterPopupDisplay = {  //after displaying the popup, this handles the blurring of the other elements
+        filter: openPopUp ? 'blur(5px)' : 'none',
+        pointerEvents: openPopUp ? 'none' : null,
+    }
+
+
+    return (
+    <>
+        <main className='mainStyle' style={afterPopupDisplay}>
         <header className='mediaLogoDiv'>
             <img src="/Media Hub Logo 2 1.png" alt="logo" />
         </header>
@@ -31,7 +44,8 @@ const Signin = () => {
                             placeholder={"Password"}
                             names={"passId"} 
                         />
-                        <p id='forgotPassword'>Forgot password?</p>
+                              <p id='forgotPassword' onClick={handleForgotPassword}>
+                                  Forgot password?</p>
                         </div>
                         {/* <input
                             type="email"
@@ -58,8 +72,25 @@ const Signin = () => {
                     <Button value={"Sign In"}/>
                 </div>
             </form>
-        </section>
-    </main>
+          </section>
+         
+        </main>
+            
+        <PopupModal 
+            open={openPopUp} close={() => setOpenPopUp(false)}
+            vector={"/Vector.png"} 
+            smsTracking={"/sms-tracking.png"} 
+            h3Title={"Forgot your password?"} 
+            paragragh={"Enter your email address below to receive a reset code"}
+            type={"text"}
+            placeholder={"Enter email address"} 
+            names={"ForgotPassword"}
+            value={"Reset password"}         
+            footerSentence={"Didnt recieve a code?"} 
+            footerLink={"Try Again"}
+        />
+      
+    </>
   )
 }
 
