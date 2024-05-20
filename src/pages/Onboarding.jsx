@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React, {useState} from 'react'
 // import { Link } from 'react-router-dom'
 // import hulu from '/public/Media 1.png';
 import { MEDIA_SOURCES } from '../components/data/data';
@@ -9,6 +9,7 @@ import { PopupModal } from '../components/PopupModal';
 export const Onboarding = () => {
   const [openPopUp, setOpenPopUp] = useState(false);
   const [selectedAccount, setSelectedAccount] = useState(null);
+
 
   function handleDoneClick() {
     selectedAccount ? setOpenPopUp(true) : null;
