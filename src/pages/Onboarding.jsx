@@ -1,7 +1,10 @@
 import React, { useState} from 'react'
-import { Link } from 'react-router-dom'
-import hulu from '/public/Media 1.png';
+// import { Link } from 'react-router-dom'
+// import hulu from '/public/Media 1.png';
 import { MEDIA_SOURCES } from '../components/data/data';
+import MediaAccount from '../components/MediaAccount';
+import { PopupModal } from '../components/PopupModal';
+
 
 export const Onboarding = () => {
   const [openPopUp, setOpenPopUp] = useState(false);
@@ -11,9 +14,18 @@ export const Onboarding = () => {
     setOpenPopUp(true);
   }
 
+  function handleMediaClick(accountName) {
+    setSelectedAccount(accountName)
+  }
+
+  const afterPopupDisplay = {  //after displaying the popup, this handles the blurring of the other elements
+    filter: openPopUp ? 'blur(5px)' : 'none',
+    pointerEvents: openPopUp ? 'none' : null,
+}
+
   return (
     <>
-      <main className='mainStyle'>
+      <main className='mainStyle' style={afterPopupDisplay}>
 
         <header className='mediaLogoDiv'>
           <img src="/Media Hub Logo 2 1.png" alt="logo" />
@@ -26,7 +38,7 @@ export const Onboarding = () => {
           </div>
 
           <section className='mediaSection'>
-            <div>
+            {/* <div>
               <Link><img src={hulu} alt="" /></Link>
               <Link><img src="/public/Media 2.png" alt="" /></Link>
               <Link><img src="/public/Media 3.png" alt="" /></Link>
@@ -42,7 +54,19 @@ export const Onboarding = () => {
               <Link><img src="/public/Media 7.png" alt="" /></Link>
               <Link><img src="/public/Media 8.png" alt="" /></Link>
               <Link><img src="/public/Media 9.png" alt="" /></Link>
+            </div> */}
+            <div className="media-options">
+              {MEDIA_SOURCES.map((media, index) => (
+                <MediaAccount
+                  key={index} 
+                  name={media.name}
+                  src={media.image}
+                  selected={selectedAccount === media.name} 
+                  onSelect={handleMediaClick} 
+                />
+              ))}
             </div>
+           
           </section>
 
           <div className='mediaButtonDiv'>
@@ -53,6 +77,20 @@ export const Onboarding = () => {
 
       </main>
     
+      <PopupModal 
+            open={openPopUp} close={() => setOpenPopUp(false)}
+            vector={"/Vector.png"} 
+            smsTracking={"/sms-tracking.png"} 
+            h3Title={"Forgot your password?"} 
+            paragragh={"Enter your email address below to receive a reset code"}
+            type={"text"}
+            placeholder={"Enter email address"} 
+            names={"ForgotPassword"}
+            value={"Reset password"}         
+            footerSentence={"Didnt recieve a code?"} 
+            footerLink={"Try Again"}
+        />
+      
     </>
   )
 }

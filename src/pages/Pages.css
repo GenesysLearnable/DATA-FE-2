@@ -113,7 +113,25 @@ section.onboarding{
     flex-direction: column;
     align-items: center;
     /* gap: 10px; */
+   
 }
+
+.media-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(3, 1fr); 
+    grid-gap: .7rem; 
+    /* margin: 0 auto; */
+    /* padding: 0 7rem; */
+}
+
+.media-img {
+    cursor: pointer;
+}
+
+.media-img.selected {
+    border: 1px solid #B66DFF 
+  }
 
 .mediah1pDiv{
     color: white;
