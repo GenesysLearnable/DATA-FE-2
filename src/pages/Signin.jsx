@@ -62,9 +62,14 @@ const Signin = () => {
             smsTracking={"/sms-tracking.png"} 
             h3Title={"Forgot your password?"} 
             paragragh={"Enter your email address below to receive a reset code"}
-            type={"text"}
-            placeholder={"Enter email address"} 
-            names={"ForgotPassword"}
+            // type={"email"}
+            // placeholder={"Enter email address"} 
+            // names={"ForgotPassword"}
+            inputs={[
+                {
+                    type: 'email', placeholder: 'Enter email address', names: 'forgotPassword'
+                }
+            ]}
             value={"Reset password"}         
             footerSentence={"Didnt recieve a code?"} 
             footerLink={"Try Again"}
