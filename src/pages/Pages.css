@@ -61,6 +61,8 @@ main header.imageDiv img {
     font-size: 25px;
 }
 
+
+        /* HOME PAGE CSS */
 .homePageMain {
     background-color: #41334B;
     width: 100%;
@@ -89,9 +91,12 @@ main header.imageDiv img {
     background-color: #11001E;
 }
 
+
+        /* ONBOARDING PAGE CSS */
 section.onboarding{
     background-color: #11001E;
 }
+
 .mediaButtonDiv{
     /* border: 5px solid red; */
     height: 50px;
@@ -136,6 +141,10 @@ section.onboarding{
 button.mediaDoneButton{
     background: linear-gradient(#6736A6, #C83CD4);
 }
+
+
+
+        /* HOMEPAGE CSS */
 .frameDivs{
     background-color: #11001E;
     width: 90%;
@@ -267,6 +276,8 @@ button.movieButton{
     height: 100vh;
   }
 
+
+        /* POPUP MODAL PAGE CSS */
   .modal-wrapper {
     position: fixed;
     width: 100%;
@@ -303,6 +314,8 @@ button.movieButton{
     /* gap: 1rem; */
   }
 
+
+         /* FORGOT PASSWORD PAGE CSS */
   .ForgotPassword-container2{
     /* border: 5px solid blue; */
     display: flex;
