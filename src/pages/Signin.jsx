@@ -87,7 +87,7 @@ const Signin = () => {
             // names={"ForgotPassword"}
             inputs={[
                 {
-                    type: 'email', placeholder: 'Enter email address', names: 'forgotPassword', inputStyles: 'inputClass'
+                    type: 'email', placeholder: 'Enter email address', names: 'forgotPassword'
                 }
             ]}
             value={"Reset password"}         

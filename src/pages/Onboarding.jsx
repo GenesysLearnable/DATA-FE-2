@@ -82,11 +82,10 @@ export const Onboarding = () => {
         vector={"/Vector.png"} 
         h3Title={`Enter your ${selectedAccount} Details`} 
         inputs={[
-        { type: 'text', placeholder: 'Email', names: 'email', inputStyles: 'inputClass', inputIcon: '👤' },
-        { type: 'email', placeholder: 'Enter your email', names: 'email', inputStyles: 'inputClass', inputIcon: '📧' },
-        // Add more input configurations as needed
+        { type: 'email', placeholder: 'Email', names: 'email' },
+        { type: 'password', placeholder: 'Password', names: 'password' },
     ]}
-            value={"Sign in"}
+         value={"Sign in"}
             
         />
       
