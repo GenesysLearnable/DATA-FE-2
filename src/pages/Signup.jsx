@@ -63,7 +63,7 @@ export const Signup = () => {
                                 inputIcon={<FaRegEyeSlash/>}
                             />
                         </div>
-                        <Button value={"Sign Up"} />
+                        <Button customStyle='verificationButton' value={"Sign Up"} />
                         <div className='formFooter'>
                             <p className="p3">Or</p>
                             <div className="socialButtons">
