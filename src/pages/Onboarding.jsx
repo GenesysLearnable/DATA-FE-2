@@ -78,17 +78,16 @@ export const Onboarding = () => {
       </main>
     
       <PopupModal 
-            open={openPopUp} close={() => setOpenPopUp(false)}
-            vector={"/Vector.png"} 
-            smsTracking={"/sms-tracking.png"} 
-            h3Title={"Forgot your password?"} 
-            paragragh={"Enter your email address below to receive a reset code"}
-            type={"text"}
-            placeholder={"Enter email address"} 
-            names={"ForgotPassword"}
-            value={"Reset password"}         
-            footerSentence={"Didnt recieve a code?"} 
-            footerLink={"Try Again"}
+        open={openPopUp} close={() => setOpenPopUp(false)} 
+        vector={"/Vector.png"} 
+        h3Title={`Enter your ${selectedAccount} Details`} 
+        inputs={[
+        { type: 'text', placeholder: 'Email', names: 'email', inputStyles: 'inputClass', inputIcon: '👤' },
+        { type: 'email', placeholder: 'Enter your email', names: 'email', inputStyles: 'inputClass', inputIcon: '📧' },
+        // Add more input configurations as needed
+    ]}
+            value={"Sign in"}
+            
         />
       
     </>

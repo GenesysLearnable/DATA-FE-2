@@ -8,7 +8,7 @@ const MediaAccount = ({ src, onSelect, name, selected }) => {
   return (
       <>
           <div className="box">
-              <img src={src} alt="" className={`media-img ${selected ? 'selected' : ''}`} />
+              <img src={src} alt="" className={`media-img ${selected ? 'selected' : ''}`} onClick={handleClick} />
           </div>
       </>
   )
