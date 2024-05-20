@@ -160,6 +160,25 @@ button.mediaDoneButton{
     background: linear-gradient(#6736A6, #C83CD4);
 }
 
+        /* INPUT CSS */
+.inputWrapper {
+    margin-top: 1rem;
+}
+
+.inputWrapper input {
+    background: #605468;
+    border: none;
+    border-radius: 0.25rem;
+    /* padding-left: .5rem; */
+}
+
+.inputWrapper input::placeholder {
+    font-size: .85rem;
+    padding-left: 1rem;
+    color: #928A98;
+
+}
+
 
 
         /* HOMEPAGE CSS */

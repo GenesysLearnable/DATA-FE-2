@@ -11,7 +11,7 @@ export const Onboarding = () => {
   const [selectedAccount, setSelectedAccount] = useState(null);
 
   function handleDoneClick() {
-    setOpenPopUp(true);
+    selectedAccount ? setOpenPopUp(true) : null;
   }
 
   function handleMediaClick(accountName) {
