@@ -47,26 +47,6 @@ const Signin = () => {
                               <p id='forgotPassword' onClick={handleForgotPassword}>
                                   Forgot password?</p>
                         </div>
-                        {/* <input
-                            type="email"
-                            placeholder='Email'
-                            name='emailAddress'
-                            value={inputs.emailAddress || ""}
-                            onChange={handleChange}
-                            required
-                        />
-                        <div className="passwordEye">
-                            <input
-                                type="password"
-                                placeholder='Password'
-                                name='passId'
-                                value={inputs.passId || ""}
-                                onChange={handleChange}
-                                required
-                            />
-                            <img src='/eye-slash.png'/>
-                        </div> */}
-                        
                     </div>
                     
                     <Button value={"Sign In"}/>
