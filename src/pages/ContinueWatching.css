@@ -4,7 +4,7 @@ header {
     grid-template-columns: repeat(3, 1fr); 
 }
 
-h1 {
+h1, main section h2 {
     color: white;
     font-weight: 700;
     font-size: 2.6rem;
@@ -16,18 +16,24 @@ h1 {
     align-items: center;
 }
 
-
 header img {
     width: 15%;
     cursor: pointer;
 }
 
-
-  /* DISLAYED MOVIES CSS */
 main {
     padding: 0 8rem;
     margin-top: 2rem;
     color: white;
+}
+
+main section {
+    margin-bottom: 1.5rem;
+}
+
+main section h2 {
+    font-size: 1.8rem;
+    letter-spacing: .6px;
 }
 
 .displayed-movies {

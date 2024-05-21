@@ -35,7 +35,7 @@ export const MEDIA_SOURCES =
     { id: 6, name: 'Prime Video', image: primeVideo },
     { id: 7, name: 'SoundCloud', image: soundCloud },
     { id: 8, name: 'ShowTime', image: showTime },
-    { id: 9, name: 'Youtube Music', image: youtubeMusic },
+    { id: 9, name: 'Youtube Music', image: youtubeMusic }
 ];
 
 export const WEEKLY_MOVIES =
@@ -43,7 +43,7 @@ export const WEEKLY_MOVIES =
         { id: 1, title: 'Mea Culpa', image: meaCulpa },
         { id: 2, title: 'King the Land', image: kingTheLand },
         { id: 3, title: 'Anikulapo', image: anikulapo },
-        { id: 4, title: 'Empire', image: empire },
+        { id: 4, title: 'Empire', image: empire }
     ];
 
 export const MONTHLY_MOVIES = 
@@ -54,8 +54,10 @@ export const MONTHLY_MOVIES =
         { id: 4, title: 'RRR', image: rrr },
         { id: 5, title: 'Courage', image: courage },
         { id: 6, title: 'Business Proposal', image: businessProposal },
-        { id: 7, title: 'Bridgerton', image: bridgerton },
-        { id: 8, title: 'Blood Sisters', image: bloodSisters },
+        { id: 7, title: 'Bridgerton', image: bridgerton }
     ]
 
-    
+export const TRIMONTHS_MOVIES = 
+    [
+        { id: 1, title: 'Blood Sisters', image: bloodSisters }
+    ]

@@ -4,9 +4,6 @@ import '../pages/ContinueWatching.css';
 const DisplayedMovie = ( { movieImg, movieName }) => {
   return (
       <>
-          {/* <h2>{date}</h2> */}
-
-         
         <div className='movie-section'>
               
             <div className='image-box'>
@@ -17,10 +14,6 @@ const DisplayedMovie = ( { movieImg, movieName }) => {
 
             <div className="progress-bar"></div>
         </div>
-          
-         
-         
-         
       </>
   )
 }
