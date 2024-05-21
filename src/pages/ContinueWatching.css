@@ -45,14 +45,10 @@ main {
     margin-top: 1.5rem;
 }
 
-.image-box {
-    /* border-radius: 4px; */
-    /* width: fit-content; */
-}
-
 .image-box img {
     border-radius: 4px 4px 0 0;
     max-width: 100%;
+    height: 260px;
 }
 
 h3 {

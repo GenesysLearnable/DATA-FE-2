@@ -1,6 +1,7 @@
 import './ContinueWatching.css';
 import leftArrow from '/public/left-red-arrow.png';
 import DisplayedMovie from '../components/DisplayedMovie';
+import { WEEKLY_MOVIES } from '../components/data/data';
 
 const ContinueWatching = () => {
   return (
@@ -14,14 +15,25 @@ const ContinueWatching = () => {
      </header>
 
       <main className="display-movie">
-        <DisplayedMovie
-          date="A Week Ago"
-          movieImg={src}
-          movieName=""
-        />
+        <section className='weekly-movies'>
+        
+         
+          <div className="displayed-movies">
+          {WEEKLY_MOVIES.map((movie) => (
+                <DisplayedMovie
+                  movieImg={movie.image}
+                  movieName={movie.title}
+                  key={movie.id}
+                />
+              ))}
+          </div>
+         
+        </section>
+       
+       
       </main>
     </>
   )
 }
 
-export default ContinueWatching
+export default ContinueWatching;

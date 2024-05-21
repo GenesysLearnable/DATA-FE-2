@@ -1,22 +1,24 @@
 import '../pages/ContinueWatching.css';
-import meaCulpa from '/public/mea-culpa.png';
 
-const DisplayedMovie = () => {
+
+const DisplayedMovie = ( { movieImg, movieName }) => {
   return (
       <>
-          <h2>This Week</h2>
+          {/* <h2>{date}</h2> */}
 
-          <section className="displayed-movies">
-            <div className='movie-section'>
-                <div className='image-box'>
-                    <img src={meaCulpa} alt="" />
-                </div>
+         
+        <div className='movie-section'>
+              
+            <div className='image-box'>
+                <img src={movieImg} alt={movieName} />
+            </div>
                 
-                <h3>Mea Culpa</h3>
+            <h3>{movieName}</h3>
 
-                <div className="progress-bar"></div>
-              </div>
-          </section>
+            <div className="progress-bar"></div>
+        </div>
+          
+         
          
          
       </>

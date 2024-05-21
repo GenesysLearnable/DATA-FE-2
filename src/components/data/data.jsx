@@ -40,22 +40,22 @@ export const MEDIA_SOURCES =
 
 export const WEEKLY_MOVIES =
     [
-        { title: 'Mea Culpa', image: meaCulpa },
-        { title: 'King the Land', image: kingTheLand },
-        { title: 'Anikulapo', image: anikulapo },
-        { title: 'Empire', image: empire },
+        { id: 1, title: 'Mea Culpa', image: meaCulpa },
+        { id: 2, title: 'King the Land', image: kingTheLand },
+        { id: 3, title: 'Anikulapo', image: anikulapo },
+        { id: 4, title: 'Empire', image: empire },
     ];
 
 export const MONTHLY_MOVIES = 
     [
-        { title: 'Inheritors', image: inheritors },
-        { title: 'Purple Hearts', image: purpleHearts },
-        { title: 'Boss Level', image: bossLevel },
-        { title: 'RRR', image: rrr },
-        { title: 'Courage', image: courage },
-        { title: 'Business Proposal', image: businessProposal },
-        { title: 'Bridgerton', image: bridgerton },
-        { title: 'Blood Sisters', image: bloodSisters },
+        { id: 1, title: 'Inheritors', image: inheritors },
+        { id: 2, title: 'Purple Hearts', image: purpleHearts },
+        { id: 3, title: 'Boss Level', image: bossLevel },
+        { id: 4, title: 'RRR', image: rrr },
+        { id: 5, title: 'Courage', image: courage },
+        { id: 6, title: 'Business Proposal', image: businessProposal },
+        { id: 7, title: 'Bridgerton', image: bridgerton },
+        { id: 8, title: 'Blood Sisters', image: bloodSisters },
     ]
 
     
