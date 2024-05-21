@@ -27,15 +27,15 @@ import bloodSisters from '/public/blood-sisters.png';
 
 export const MEDIA_SOURCES = 
    [ 
-    { name: 'Hulu', image: huluImg }, 
-    { name: 'Netflix', image: netflix},
-    { name: 'Spotify', image: spotify},
-    { name: 'Google Play Music', image: googlePlay },
-    { name: 'Apple Music', image: appleMusic },
-    { name: 'Prime Video', image: primeVideo },
-    { name: 'SoundCloud', image: soundCloud },
-    { name: 'ShowTime', image: showTime },
-    { name: 'Youtube Music', image: youtubeMusic },
+    { id: 1, name: 'Hulu', image: huluImg }, 
+    { id: 2, name: 'Netflix', image: netflix},
+    { id: 3, name: 'Spotify', image: spotify},
+    { id: 4, name: 'Google Play Music', image: googlePlay },
+    { id: 5, name: 'Apple Music', image: appleMusic },
+    { id: 6, name: 'Prime Video', image: primeVideo },
+    { id: 7, name: 'SoundCloud', image: soundCloud },
+    { id: 8, name: 'ShowTime', image: showTime },
+    { id: 9, name: 'Youtube Music', image: youtubeMusic },
 ];
 
 export const WEEKLY_MOVIES =

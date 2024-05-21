@@ -57,9 +57,9 @@ export const Onboarding = () => {
               <Link><img src="/public/Media 9.png" alt="" /></Link>
             </div> */}
             <div className="media-options">
-              {MEDIA_SOURCES.map((media, index) => (
+              {MEDIA_SOURCES.map((media) => (
                 <MediaAccount
-                  key={index} 
+                  key={media.id} 
                   name={media.name}
                   src={media.image}
                   selected={selectedAccount === media.name} 
