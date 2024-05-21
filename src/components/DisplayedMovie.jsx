@@ -18,4 +18,4 @@ const DisplayedMovie = ( { movieImg, movieName }) => {
   )
 }
 
-export default DisplayedMovie
+export default DisplayedMovie;
