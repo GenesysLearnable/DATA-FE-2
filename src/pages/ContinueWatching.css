@@ -1,0 +1,72 @@
+header {
+    padding: 3rem 8rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+}
+
+h1 {
+    color: white;
+    font-weight: 700;
+    font-size: 2.6rem;
+}
+
+.title {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+
+header img {
+    width: 15%;
+    cursor: pointer;
+}
+
+
+  /* DISLAYED MOVIES CSS */
+main {
+    padding: 0 8rem;
+    margin-top: 2rem;
+    color: white;
+}
+
+.displayed-movies {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: auto;
+    gap: 2rem;
+}
+
+.movie-section {
+    border: 1px solid #41334B;
+    width: fit-content;
+    /* width: 28%; */
+    border-radius: 4px;
+    margin-top: 1.5rem;
+}
+
+.image-box {
+    /* border-radius: 4px; */
+    /* width: fit-content; */
+}
+
+.image-box img {
+    border-radius: 4px 4px 0 0;
+    max-width: 100%;
+}
+
+h3 {
+   margin-top: 1rem;
+   margin-left: .8rem;
+
+}
+
+.progress-bar {
+    width: 200px;
+    height: 10px;
+    background: #A851FF;
+    border-radius: 50px;
+    margin-top: .7rem;
+    margin-bottom: 1rem;
+    margin-left: .8rem;
+}
