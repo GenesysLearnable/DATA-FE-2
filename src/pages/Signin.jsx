@@ -49,7 +49,7 @@ const Signin = () => {
                         </div>
                     </div>
                     
-                    <Button value={"Sign In"}/>
+                    <Button customStyle='verificationButton' value={"Sign In"}/>
                 </div>
             </form>
           </section>
@@ -71,7 +71,7 @@ const Signin = () => {
                 }
             ]}
             value={"Reset password"}         
-            footerSentence={"Didnt recieve a code?"} 
+            footerSentence={"Didnt receive a code?"} 
             footerLink={"Try Again"}
         />
       

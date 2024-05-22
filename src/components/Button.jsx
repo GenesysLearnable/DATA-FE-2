@@ -8,11 +8,15 @@ export const Button = ({ value, customStyle }) => {
   }
 
   return (
-    <button
-      className={`buttonStyle ${customStyle}`}
-      onClick={handleSubmit}
-      type='submit'>
-      {value}
-    </button>
+      <>
+        <button
+          className={`buttonStyle ${customStyle}`}
+          onClick={handleSubmit}
+          type='submit'
+        >
+        {value}
+        </button>
+      </>
+   
   )
 }
