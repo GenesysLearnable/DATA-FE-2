@@ -3,6 +3,8 @@ import { Button } from '../components/Button';
 import { Inputs } from '../components/Inputs';
 import { PopupModal } from '../components/PopupModal';
 import './Pages.css';
+import { IoIosMail } from 'react-icons/io';
+import { FaRegEyeSlash } from 'react-icons/fa';
 
 
 const Signin = () => {
@@ -35,18 +37,20 @@ const Signin = () => {
                         <Inputs
                             type={"email"}
                             placeholder={"Email"}
-                            names={"emailAddress"} 
+                            names={"emailAddress"}
+                            inputIcon={<IoIosMail/> } 
                         />
-                        
-                        <div className='passgap'>
+                    </div>   
+                    <div className='passgap'>
                         <Inputs
                             type={"password"}
                             placeholder={"Password"}
-                            names={"passId"} 
+                            names={"passId"}
+                            inputIcon={<FaRegEyeSlash/>}
                         />
-                              <p id='forgotPassword' onClick={handleForgotPassword}>
-                                  Forgot password?</p>
-                        </div>
+                        <p id='forgotPassword' onClick={handleForgotPassword}>
+                            Forgot password?
+                        </p>
                     </div>
                     
                     <Button customStyle='verificationButton' value={"Sign In"}/>

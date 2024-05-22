@@ -4,8 +4,8 @@ button.buttonStyle {
   cursor: pointer;
   color: #ffff;
   background-image: linear-gradient(to right, #C83CD4, #6736A6);
-  margin-top: 10px;
-  width: 100%;
+  /* margin-top: 10px; */
+  max-width: 100%;
 }
 
 input {

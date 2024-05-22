@@ -70,12 +70,12 @@ main header.imageDiv img {
 
         /* HOME PAGE CSS */
 .homePageMain {
-    background-color: #41334B;
+    background-color: #11001E;
     width: 100%;
 }
-.homePageMain div{
+/* .homePageMain div{
     background-color: #11001E;
-}
+} */
 .homePageMain .frameButtonDiv{
     /* border: 5px solid red; */
     height: 70px;
@@ -92,7 +92,7 @@ main header.imageDiv img {
     cursor: pointer;
     width: 102px;
     height: 40px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     color: white;
     background-color: #11001E;
 }
@@ -315,11 +315,11 @@ button.movieButton{
     color: rgb(247, 7, 247);
 }
 
-.passwordEye img{
+/* .passwordEye img{
     position: fixed;
     right: 26%;
     top: 63%;
-}
+} */
 
 #forgotPassword {
     /* border: 5px solid red; */
