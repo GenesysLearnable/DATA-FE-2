@@ -7,7 +7,7 @@ import { Homepage } from "./pages/Homepage"
 import { Onboarding } from "./pages/Onboarding"
 import { ForgotPassword } from "./pages/ForgotPassword"
 // import { LandingPage } from "./pages/LandingPage"
-// import { ProfilePage } from "./pages/ProfilePage"
+import { ProfilePage } from "./pages/ProfilePage"
 
 
 function App() {
@@ -22,8 +22,8 @@ function App() {
           <Route path="Homepage" element={<Homepage/>}/>
           <Route path="Onboarding" element={<Onboarding/>}/>
           <Route path="ForgotPassword" element={<ForgotPassword/>}/>
-          {/* <Route path="LandingPage" element={<LandingPage/>}/>
-          <Route path="ProfilePage" element={<ProfilePage/>}/> */}
+          {/* <Route path="LandingPage" element={<LandingPage/>}/> */}
+          <Route path="ProfilePage" element={<ProfilePage/>}/>
           {/* <Route path="*" element={<PageNotFound />} /> */}
         </Routes>
       </BrowserRouter>
