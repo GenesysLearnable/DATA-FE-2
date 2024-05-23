@@ -5,12 +5,35 @@ import { Signup } from "./pages/Signup"
 import { EmailVerification } from "./pages/EmailVerification"
 import { Homepage } from "./pages/Homepage"
 import { Onboarding } from "./pages/Onboarding"
-import { ForgotPassword } from "./pages/ForgotPassword"
+// import { ForgotPassword } from "./pages/ForgotPassword"
 import { LandingPage } from "./pages/LandingPage"
 import { ProfilePage } from "./pages/ProfilePage"
 
+import { useState } from "react";
+import Home from "./pages/Home.jsx";
+import PageNotFound from "./pages/PageNotFound.jsx";
+import MoviePage from "./pages/MoviePage.jsx";
+import MusicHome from "./pages/MusicHome.jsx";
 
 function App() {
+  const [selectedMovieId, setSelectedMovieId] = useState(null);
+  const [watchlist, setWatchlist] = useState([]);
+
+  const handleMovieSelect = (id) => {
+    setSelectedMovieId(id);
+  };
+
+  const addToWatchlist = (movie) => {
+    setWatchlist((prevWatchlist) => {
+      if (prevWatchlist.find((item) => item.imdbID === movie.imdbID)) {
+        return prevWatchlist;
+      }
+      return [...prevWatchlist, movie];
+    });
+  };
+
+  console.log(watchlist);
+
   return (
     <div>
       <BrowserRouter>
@@ -25,6 +48,27 @@ function App() {
           <Route path="LandingPage" element={<LandingPage />} />
           <Route path="ProfilePage" element={<ProfilePage />} />
           {/* <Route path="*" element={<PageNotFound />} /> */}
+
+          <Route
+            path="Home"
+            element={
+              <Home
+                onMovieSelect={handleMovieSelect}
+                addToWatchlist={addToWatchlist}
+              />
+            }
+          />
+          <Route
+            path="/MoviePage"
+            element={
+              <MoviePage
+                selectedMovieId={selectedMovieId}
+                addToWatchlist={addToWatchlist}
+              />
+            }
+          />
+          <Route path="*" element={<PageNotFound />} />
+          <Route path="MusicHome" element={<MusicHome />} />
         </Routes>
       </BrowserRouter>
     </div>
