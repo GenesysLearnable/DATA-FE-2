@@ -173,7 +173,7 @@ export default function Signin() {
         <a href="#" className={styles.forgotPasswordLink}>
           Forgot password?
         </a>
-        <Link to="/Onboarding">
+        <Link to="/SubscriptionPlan">
           <button type="submit" className={styles.signupButton}>
             Sign In
           </button>
