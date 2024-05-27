@@ -81,12 +81,12 @@ export default function Onboarding() {
         <section className={styles.accountsContainer}>
           <div className={styles.accountSet}>
             <ImageBlock
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/71bcdec87f960de0c556488b1ce052d8c56c99000c6cdbb26738a788d3a33f9e?apiKey=df44ca8e15de4475b0d7b182ebb1db7c&"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/df7a0328b5ac9c303a198ea6edbc682ea5b5d876bd351ef71a5a8287366e5d57?apiKey=df44ca8e15de4475b0d7b182ebb1db7c&"
               alt="Spotify"
               onClick={handleSpotifyClick}
             />
             <ImageBlock
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/df7a0328b5ac9c303a198ea6edbc682ea5b5d876bd351ef71a5a8287366e5d57?apiKey=df44ca8e15de4475b0d7b182ebb1db7c&"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/71bcdec87f960de0c556488b1ce052d8c56c99000c6cdbb26738a788d3a33f9e?apiKey=df44ca8e15de4475b0d7b182ebb1db7c&"
               alt="Netflix"
               onClick={handleNetflixClick}
             />
