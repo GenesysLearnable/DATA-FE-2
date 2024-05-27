@@ -1,4 +1,4 @@
-.mainContainer{
+.mainContainer {
   margin: 0 auto;
   font-size: 1.6rem;
 }
@@ -130,7 +130,7 @@
   border-radius: 4px;
 }
 
-.toggleContainer{
+.toggleContainer {
   text-decoration: none;
 }
 
@@ -187,12 +187,28 @@
 /* ===========================Search result =========================================================== */
 .musicList {
   display: flex;
-  flex-wrap: wrap;
   width: 80%;
   margin: 0 auto;
   gap: 19px;
   margin-top: 48px;
   max-width: 1200px;
+  flex-wrap: wrap;
+  position: absolute;
+}
+
+.musicList2 {
+  display: flex;
+  width: 87.2%;
+  margin: 0 auto;
+  padding: 24px;
+  gap: 19px;
+  margin-top: 48px;
+  margin-left: -24px;
+  max-width: 1200px;
+  overflow-x: scroll;
+  position: absolute;
+  border: 1px solid grey;
+  
 }
 
 .album {
@@ -207,11 +223,13 @@
 }
 
 .albumImage {
-  width: 100%;
-  height: auto;
+  max-width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 10px;
+  overflow: hidden;
+  z-index: -1;
 }
 
 .albumName,
@@ -231,7 +249,6 @@
   color: grey;
   margin-bottom: 5px;
 }
-
 
 /* =====================================Notification Message ================================= */
 .messageContainer {
@@ -265,7 +282,7 @@
   cursor: pointer; /* Pointer cursor on hover */
   transition: background-color 0.3s ease; /* Smooth background color transition */
   padding-top: -5px;
-  
+
   position: absolute;
   top: 8px;
   right: 8px;
@@ -281,9 +298,10 @@
 
 .artistButtonContainer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
   align-items: center;
+  padding: 12px;
 }
 
 .imageTitleContainer {
@@ -292,13 +310,7 @@
   flex-grow: 1;
 }
 
-.playlistHeader {
-  color: white;
-  text-align: center;
-}
-
 /* ================================ Input ================================================== */
-
 
 .input {
   width: 100%;
@@ -319,4 +331,108 @@
 
 .input::placeholder {
   color: #aaa;
+}
+
+.spotifyLogo {
+  width: 48px;
+}
+
+.spotifyTitleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+}
+
+/* ==================================== PLAYLIST ================================================ */
+.playlistHeader {
+  color: white;
+  text-align: center;
+}
+
+/* ==================================Search result modal ============================================================ */
+
+.mainContainer {
+  position: relative;
+  margin: 0 auto;
+}
+
+.contentContainer {
+  position: relative;
+  padding: 20px;
+}
+
+.searchResultsContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* Adjust as needed */
+  background-color: white; /* Optional: to ensure visibility */
+}
+
+.favouriteArtistsContainer {
+  margin-top: 20px;
+}
+
+.trackCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.trackImage {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.trackInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.spotifyLogo {
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
+}
+
+.messageContainer {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: green;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.message {
+  margin: 0;
+}
+
+
+.playlistMainContainer{
+  color: white;
+  border: 1px solid grey;
+  width: 90%;
+  margin: 48px auto;
+  padding: 24px;
+}
+
+.artistSeeAllContainer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.seeAllLink{
+  color: #FF604B;
+  text-decoration: none;
+}
+
+.artists{
+  margin-left: 10px;
 }
