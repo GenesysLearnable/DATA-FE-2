@@ -125,7 +125,7 @@ function MoviePage({ selectedMovieId, addToWatchlist }) {
     const fetchMovieDetails = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://www.omdbapi.com/?apikey=cba680cd&i=${selectedMovieId || id}`);
+        const response = await fetch(`https://www.omdbapi.com/?apikey=cba680cd&i=${selectedMovieId || id}`);
         if (!response.ok) {
           throw new Error("Failed to fetch movie details");
         }
@@ -141,7 +141,7 @@ function MoviePage({ selectedMovieId, addToWatchlist }) {
 
     const fetchRelatedMovies = async (genre) => {
       try {
-        const response = await fetch(`http://www.omdbapi.com/?apikey=cba680cd&s=${genre}&type=movie`);
+        const response = await fetch(`https://www.omdbapi.com/?apikey=cba680cd&s=${genre}&type=movie`);
         if (!response.ok) {
           throw new Error("Failed to fetch related movies");
         }
