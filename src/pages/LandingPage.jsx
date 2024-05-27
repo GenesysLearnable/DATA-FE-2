@@ -1,30 +1,32 @@
-import React from 'react'
-import { Navigations } from '../components/Navigations'
-import { Inputs } from '../components/Inputs'
-import { Button } from '../components/Button'
-import Styles from "./Styles.module.css"
+import { Navigations } from "../components/Navigations";
+import { Inputs } from "../components/Inputs";
+import { Button } from "../components/Button";
+import Styles from "./Styles.module.css";
 
 export const LandingPage = () => {
   return (
-    <main className='homePageMain'>
+    <main className="homePageMain">
       <Navigations
-        Home='Home'
-        Dashboard='Dashboard'
-        Services='Services'
+        Home="Home"
+        Dashboard="Dashboard"
+        Services="Services"
         showIcons={false}
       />
       <section className={Styles.landingSectionOne}>
         <div id={Styles.sectionOneDiv}>
           <h1>
-            Streamline Your Streaming,
-            Unify Your Entertainment
-            Experience!
+            Streamline Your Streaming, Unify Your Entertainment Experience!
           </h1>
-          <p>Meet Media Hub, a media unifier where you can link all you favourite Music and Movie Streaming Services</p>
+          <p>
+            Meet Media Hub, a media unifier where you can link all you favourite
+            Music and Movie Streaming Services
+          </p>
         </div>
         <img
-          customStyle={Styles.landingPageBanner}
-          src="/LandingPageBanner.png" alt="" />
+          className={Styles.landingPageBanner}
+          src="/LandingPageBanner.png"
+          alt=""
+        />
       </section>
 
       <section className={Styles.landingSectionTwo}>
@@ -35,28 +37,40 @@ export const LandingPage = () => {
               <img src="/musicIcon.png" alt="" />
               <div className={Styles.innerImgDiv}>
                 <h3>Link and create Playlist</h3>
-                <p>Link your playlist from your favourite streaming platform and even create new ones with Media Hub</p>
+                <p>
+                  Link your playlist from your favourite streaming platform and
+                  even create new ones with Media Hub
+                </p>
               </div>
             </div>
             <div className={Styles.imgDiv}>
               <img src="/videoIcon.png" alt="" />
               <div className={Styles.innerImgDiv}>
                 <h3>Link and create Watchlist</h3>
-                <p>Link your Watchlist from your favourite streaming platform and even create new ones with Media Hub</p>
+                <p>
+                  Link your Watchlist from your favourite streaming platform and
+                  even create new ones with Media Hub
+                </p>
               </div>
             </div>
             <div className={Styles.imgDiv}>
               <img src="/shareIcon.png" alt="" />
               <div className={Styles.innerImgDiv}>
                 <h3>Share Media Hub Contents</h3>
-                <p>Share your saved movies,Music, recommendations,and even Playlist with anybody.</p>
+                <p>
+                  Share your saved movies,Music, recommendations,and even
+                  Playlist with anybody.
+                </p>
               </div>
             </div>
             <div className={Styles.imgDiv}>
               <img src="/trackingIcon.png" alt="" />
               <div className={Styles.innerImgDiv}>
                 <h3>Track Media Contents</h3>
-                <p>Keep track of all your media contents on all streaming platforms and unify them on Media Hub</p>
+                <p>
+                  Keep track of all your media contents on all streaming
+                  platforms and unify them on Media Hub
+                </p>
               </div>
             </div>
           </div>
@@ -66,7 +80,10 @@ export const LandingPage = () => {
       <section className={Styles.landingSectionThree}>
         <div className={Styles.landingSection3Div1}>
           <h1>View your Unified Media Contents</h1>
-          <p>Gain access to al your linked media contents from different platform all on your Media Hub homepage.</p>
+          <p>
+            Gain access to al your linked media contents from different platform
+            all on your Media Hub homepage.
+          </p>
         </div>
         <div className={Styles.landingSection3Div2}>
           <img src="/homeimg.png" alt="" />
@@ -80,7 +97,8 @@ export const LandingPage = () => {
         <div className={Styles.landingSection4Div2}>
           <h1>Track and view streaming Progress</h1>
           <p>
-            Keep track of all your streaming progress for movies and music on the Media Hub dashboard.
+            Keep track of all your streaming progress for movies and music on
+            the Media Hub dashboard.
           </p>
         </div>
       </section>
@@ -99,9 +117,7 @@ export const LandingPage = () => {
               <p>Share playlist/watch list within the app</p>
             </div>
             <div className={Styles.planButton}>
-              <Button
-                value={'Get Plan'}
-              />
+              <Button value={"Get Plan"} />
             </div>
           </div>
 
@@ -109,18 +125,13 @@ export const LandingPage = () => {
             <div className={Styles.planInnerDiv} id={Styles.planInnerDiv}>
               <h3>Pro</h3>
               <h2>$4.99</h2>
-              <p>Connect  up to 5 streaming services </p>
+              <p>Connect up to 5 streaming services </p>
               <p>Unlimited manual media tracking</p>
-              <p>Share playlist/watch list across
-                social platforms
-              </p>
-              <p>Advanced goal setting with
-                progress tracking</p>
+              <p>Share playlist/watch list across social platforms</p>
+              <p>Advanced goal setting with progress tracking</p>
             </div>
             <div className={Styles.planButton} id={Styles.planButton}>
-              <Button
-                value={'Get Plan'}
-              />
+              <Button value={"Get Plan"} />
             </div>
           </div>
 
@@ -128,19 +139,15 @@ export const LandingPage = () => {
             <div className={Styles.planInnerDiv}>
               <h3>Premium</h3>
               <h2>$9.99</h2>
-              <p>Connect all supported streaming
-                services </p>
-              <p>Advanced media tracking with
-                data visualization</p>
-              <p>Collaborative playlist/watch list
-                share and edit with others </p>
-              <p>Customizable goals with achievement
-                badges and challenges </p>
+              <p>Connect all supported streaming services </p>
+              <p>Advanced media tracking with data visualization</p>
+              <p>
+                Collaborative playlist/watch list share and edit with others{" "}
+              </p>
+              <p>Customizable goals with achievement badges and challenges </p>
             </div>
             <div className={Styles.planButton}>
-              <Button
-                value={'Get Plan'}
-              />
+              <Button value={"Get Plan"} />
             </div>
           </div>
         </div>
@@ -175,8 +182,10 @@ export const LandingPage = () => {
         </div>
         <div className={Styles.landingSectionSixContactDiv}>
           <h2>Contact us</h2>
-          <p>Let’s Connect, Kindly Fill out the Form.
-            We’re here to help you or reach us via Mail or Phone.</p>
+          <p>
+            Let’s Connect, Kindly Fill out the Form. We’re here to help you or
+            reach us via Mail or Phone.
+          </p>
           <div>
             <img src="/mailIcon.png" alt="" />
             <p>Mediahub@gmail.com</p>
@@ -227,10 +236,7 @@ export const LandingPage = () => {
             </div>
           </div>
         </div>
-
-
       </section>
     </main>
-  )
-}
-
+  );
+};

@@ -1,9 +1,9 @@
-import React from "react";
 import { CgProfile } from "react-icons/cg";
 import { IoMdSearch } from "react-icons/io";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "./Button";
 import Styles from "../pages/Styles.module.css";
+
 
 export const Navigations = ({
   Home,
@@ -12,13 +12,23 @@ export const Navigations = ({
   showButtons = true,
   showIcons = true,
 }) => {
+  const navigate = useNavigate()
+
+  const handleSignInClick = () => {
+    navigate("/Signin");
+  };
+
+  const handleSignUpClick = () => {
+    navigate("/Signup");
+  };
+
   return (
     <header className="navStyle">
       <nav className="navStyle">
         <img src="/Media Hub Logo 2 1.png" alt="logo" />
         <ul className="listStyle">
           <NavLink
-            to="/"
+            to="/MusicHome"
             className={({ isActive }) =>
               isActive ? "navLink active" : "navLink"
             }
@@ -26,7 +36,7 @@ export const Navigations = ({
             {Home}
           </NavLink>
           <NavLink
-            to="/dashboard"
+            to="/MusicHome"
             className={({ isActive }) =>
               isActive ? "navLink active" : "navLink"
             }
@@ -34,7 +44,7 @@ export const Navigations = ({
             {Dashboard}
           </NavLink>
           <NavLink
-            to="/services"
+            to="/MusicHome"
             className={({ isActive }) =>
               isActive ? "navLink active" : "navLink"
             }
@@ -50,8 +60,12 @@ export const Navigations = ({
         )}
         {showButtons && (
           <div className={Styles.navButton}>
-            <Button customStyle={Styles.Button1} value="Sign in" />
-            <Button value="Sign up"  />
+            <Button
+              customStyle={Styles.Button1}
+              value="Sign in"
+              onClick={handleSignInClick}
+            />
+            <Button value="Sign up" onClick={handleSignUpClick} />
           </div>
         )}
       </nav>

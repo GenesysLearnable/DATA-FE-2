@@ -1,18 +1,11 @@
-import React from "react";
 import "./Components.css";
-import { Link, NavLink } from "react-router-dom";
 
-export const Button = ({ value, customStyle}) => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Add submit logic
-  };
-
+export const Button = ({ value, customStyle, onClick }) => {
   return (
     <>
       <button
         className={`buttonStyle ${customStyle}`}
-        onClick={handleSubmit}
+        onClick={onClick}
         type="submit"
       >
         {value}

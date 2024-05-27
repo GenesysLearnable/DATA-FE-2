@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import './App.css'
-import Signin from './pages/Signin'
-import { Signup } from "./pages/Signup"
+// import Signin from './pages/Signin'
+// import { Signup } from "./pages/Signup"
 import { EmailVerification } from "./pages/EmailVerification"
 import { Homepage } from "./pages/Homepage"
-import { Onboarding } from "./pages/Onboarding"
+// import { Onboarding } from "./pages/Onboarding"
 // import { ForgotPassword } from "./pages/ForgotPassword"
 import { LandingPage } from "./pages/LandingPage"
 import { ProfilePage } from "./pages/ProfilePage"
@@ -14,8 +14,14 @@ import Home from "./pages/Home.jsx";
 import PageNotFound from "./pages/PageNotFound.jsx";
 import MoviePage from "./pages/MoviePage.jsx";
 import MusicHome from "./pages/MusicHome.jsx";
+import Signup from "./pages/Signup";
+import Signin from "./pages/Signin";
+import SubscriptionPlan from "./pages/SubscriptionPlan";
+import Onboarding from "./pages/Onboarding";
+import axios from "axios"
 
 function App() {
+  axios.default.withCredentials=true
   const [selectedMovieId, setSelectedMovieId] = useState(null);
   const [watchlist, setWatchlist] = useState([]);
 
@@ -39,8 +45,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route index element={<LandingPage />} />
-          <Route path="SignUp" element={<Signup />} />
+          <Route path="Signup" element={<Signup />} />
           <Route path="Signin" element={<Signin />} />
+          <Route path="SubscriptionPlan" element={<SubscriptionPlan />} />
+          <Route path="Onboarding" element={<Onboarding />} />
           <Route path="EmailVerification" element={<EmailVerification />} />
           <Route path="Homepage" element={<Homepage />} />
           <Route path="Onboarding" element={<Onboarding />} />

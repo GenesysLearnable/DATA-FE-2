@@ -1,7 +1,131 @@
+// import PropTypes from "prop-types";
+// import { useEffect, useState, useRef } from "react";
+// import styles from "./MusicHome.module.css";
+// import { Link, NavLink } from "react-router-dom";
+// import spotify from "../assets/spotify-logo.svg";
+// import GetArtists from "../components/GetArtists";
+// import TrackRecommendation from "../components/TrackRecommendation";
+
+// //==================================== Music Home  ==========================================
+// export default function MusicHome() {
+//   const [musicData, setMusicData] = useState([]);
+//   const [loading, setLoading] = useState(false);
+//   const [error, setError] = useState(null);
+//   const [query, setQuery] = useState("");
+//   const [playlist, setPlaylist] = useState(
+//     JSON.parse(localStorage.getItem("playlist")) || []
+//   );
+//   const [showMessage, setShowMessage] = useState(false);
+//   const searchInputRef = useRef(null);
+
+//   const fetchMusic = async (searchQuery) => {
+//     const url = `https://spotify23.p.rapidapi.com/search/?q=${encodeURIComponent(
+//       searchQuery
+//     )}&type=multi&offset=0&limit=10&numberOfTopResults=5`;
+//     const options = {
+//       method: "GET",
+//       headers: {
+//         "X-RapidAPI-Key": "3e3ca70843msh8aa19a49b39a9c5p1a7812jsn6bb63025b4e0",
+//         "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
+//       },
+//     };
+
+//     try {
+//       setLoading(true);
+//       const response = await fetch(url, options);
+//       const result = await response.json();
+//       setMusicData(result.albums.items);
+//       setLoading(false);
+//     } catch (error) {
+//       setError(error);
+//       setLoading(false);
+//     }
+//   };
+
+//   const handleSearch = (e) => {
+//     e.preventDefault();
+//     if (query.length >= 2) {
+//       fetchMusic(query);
+//     }
+//   };
+
+//   const focusSearchInput = () => {
+//     if (searchInputRef.current) {
+//       searchInputRef.current.focus();
+//     }
+//   };
+
+//   const addToPlaylist = (album) => {
+//     setPlaylist([...playlist, album]);
+//     localStorage.setItem("playlist", JSON.stringify([...playlist, album]));
+//     setShowMessage(true);
+//     setTimeout(() => {
+//       setShowMessage(false);
+//     }, 3000);
+//   };
+
+//   const removeFromPlaylist = (album) => {
+//     const updatedPlaylist = playlist.filter(
+//       (item) => item.data.uri !== album.data.uri
+//     );
+//     setPlaylist(updatedPlaylist);
+//     localStorage.setItem("playlist", JSON.stringify(updatedPlaylist));
+//   };
+
+//   useEffect(() => {
+//     if (query.length >= 2) {
+//       fetchMusic(query);
+//     } else {
+//       setMusicData([]);
+//     }
+//   }, [query]);
+
+//   return (
+//     <div className={styles.mainContainer}>
+//       <Navigation
+//         query={query}
+//         setQuery={setQuery}
+//         handleSearch={handleSearch}
+//         searchInputRef={searchInputRef}
+//       />
+//       <Toggle />
+
+//       <div className={styles.contentContainer}>
+//         <GetArtists />
+//         <TrackRecommendation />
+
+//         {loading && <p>Loading...</p>}
+//         {error && <p>Error fetching music data: {error.message}</p>}
+//         {!loading &&
+//           !error &&
+//           musicData.length === 0 &&
+//           playlist.length === 0 && (
+//             <EmptyModal focusSearchInput={focusSearchInput} />
+//           )}
+//         <SearchResult musicData={musicData} addToPlaylist={addToPlaylist} />
+//         {playlist.length > 0 && (
+//           <Playlist
+//             playlist={playlist}
+//             removeFromPlaylist={removeFromPlaylist}
+//           />
+//         )}
+//         {showMessage && (
+//           <div className={styles.messageContainer}>
+//             <p className={styles.message}>Added to playlist!</p>
+//           </div>
+//         )}
+//       </div>
+//     </div>
+//   );
+// }
+
 import PropTypes from "prop-types";
 import { useEffect, useState, useRef } from "react";
 import styles from "./MusicHome.module.css";
 import { Link, NavLink } from "react-router-dom";
+import spotify from "../assets/spotify-logo.svg";
+import GetArtists from "../components/GetArtists";
+import TrackRecommendation from "../components/TrackRecommendation";
 
 //==================================== Music Home  ==========================================
 export default function MusicHome() {
@@ -22,7 +146,7 @@ export default function MusicHome() {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "06d6087b29msh8a43894100a519dp1e200ajsn020f8f4b76fb",
+        "X-RapidAPI-Key": "3e3ca70843msh8aa19a49b39a9c5p1a7812jsn6bb63025b4e0",
         "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
       },
     };
@@ -87,23 +211,26 @@ export default function MusicHome() {
       />
       <Toggle />
 
-      {loading && <p>Loading...</p>}
-      {error && <p>Error fetching music data: {error.message}</p>}
-      {!loading &&
-        !error &&
-        musicData.length === 0 &&
-        playlist.length === 0 && (
-          <EmptyModal focusSearchInput={focusSearchInput} />
-        )}
-      <SearchResult musicData={musicData} addToPlaylist={addToPlaylist} />
-      {playlist.length > 0 && (
-        <Playlist playlist={playlist} removeFromPlaylist={removeFromPlaylist} />
-      )}
-      {showMessage && (
-        <div className={styles.messageContainer}>
-          <p className={styles.message}>Added to playlist!</p>
+      <div className={styles.contentContainer}>
+        {loading && <p>Loading...</p>}
+        {error && <p>Error fetching music data: {error.message}</p>}
+        <div className={styles.searchResultsContainer}>
+          <SearchResult musicData={musicData} addToPlaylist={addToPlaylist} />
         </div>
-      )}
+        <GetArtists />
+        <TrackRecommendation />
+        {playlist.length > 0 && (
+          <Playlist
+            playlist={playlist}
+            removeFromPlaylist={removeFromPlaylist}
+          />
+        )}
+        {showMessage && (
+          <div className={styles.messageContainer}>
+            <p className={styles.message}>Added to playlist!</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
@@ -134,11 +261,11 @@ function Navigation({ query, setQuery, handleSearch, searchInputRef }) {
         <h1 className={styles.logoText}>Media Hub</h1>
       </button>
       <nav className={styles.navigation}>
-        <NavLink to="/" exact className={styles.active}>
+        <NavLink to="/MusicHome" exact className={styles.active}>
           Home
         </NavLink>
         <NavLink
-          to="/dashboard"
+          to="/Dashboard"
           className={({ isActive }) =>
             isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
           }
@@ -146,7 +273,7 @@ function Navigation({ query, setQuery, handleSearch, searchInputRef }) {
           Dashboard
         </NavLink>
         <NavLink
-          to="/services"
+          to="/Services"
           className={({ isActive }) =>
             isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
           }
@@ -165,12 +292,14 @@ function Navigation({ query, setQuery, handleSearch, searchInputRef }) {
             onChange={(e) => setQuery(e.target.value)}
           />
         </form>
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/8d9ccd3c0f798dd4b0085cb65b3daa5df09d6f3bf7d588fa1f52b1bb56ba1816?apiKey=bc155cd4463f4c48a216b01c1991193c&"
-          alt="User settings"
-          className={styles.settingsIcon}
-        />
+        <Link to="/ProfilePage">
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/8d9ccd3c0f798dd4b0085cb65b3daa5df09d6f3bf7d588fa1f52b1bb56ba1816?apiKey=bc155cd4463f4c48a216b01c1991193c&"
+            alt="User settings"
+            className={styles.settingsIcon}
+          />
+        </Link>
       </div>
     </header>
   );
@@ -182,7 +311,7 @@ function Toggle() {
     <section className={styles.contentSection}>
       <nav className={styles.navContainer}>
         <div className={styles.activeNavItem}>Music</div>
-        <Link to="/" className={styles.toggleContainer}>
+        <Link to="/Home" className={styles.toggleContainer}>
           <div className={styles.navItem}>Movies</div>
         </Link>
       </nav>
@@ -248,6 +377,9 @@ const SearchResult = ({ musicData, addToPlaylist }) => (
           <p className={styles.albumArtist}>
             {album.data.artists.items[0].profile.name}
           </p>
+          <span>
+            <img className={styles.spotifyLogo} src={spotify} />
+          </span>
           <button
             onClick={() => addToPlaylist(album)}
             className={styles.plusButton}
@@ -273,9 +405,14 @@ const SearchResult = ({ musicData, addToPlaylist }) => (
 
 //==================================== PlayList  ==========================================
 const Playlist = ({ playlist, removeFromPlaylist }) => (
-  <>
-    <h2 className={styles.playlistHeader}>My Playlist</h2>
-    <div className={styles.musicList}>
+  <div className={styles.playlistMainContainer}>
+    <div className={styles.artistSeeAllContainer}>
+      <h2 className={styles.playlistHeader}>My Playlist</h2>
+      <Link to="" className={styles.seeAllLink}>
+        See all
+      </Link>
+    </div>
+    <div className={styles.musicList2}>
       {playlist.map((album) => (
         <div className={styles.album} key={album.data.uri}>
           <div className={styles.imageTitleContainer}>
@@ -284,7 +421,12 @@ const Playlist = ({ playlist, removeFromPlaylist }) => (
               alt={album.data.name}
               className={styles.albumImage}
             />
-            <p className={styles.albumName}>{album.data.name}</p>
+            <div className={styles.spotifyTitleContainer}>
+              <p className={styles.albumName}>{album.data.name}</p>
+              <span>
+                <img src={spotify} className={styles.spotifyLogo} />
+              </span>
+            </div>
           </div>
           <button
             className={styles.plusButton}
@@ -295,5 +437,5 @@ const Playlist = ({ playlist, removeFromPlaylist }) => (
         </div>
       ))}
     </div>
-  </>
+  </div>
 );
