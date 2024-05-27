@@ -32,7 +32,7 @@ function Home({ onMovieSelect }) {
   const handleMovieClick = async (imdbID) => {
     try {
       const res = await fetch(
-        `http://www.omdbapi.com/?apikey=${key}&i=${imdbID}&plot=full`
+        `https://www.omdbapi.com/?apikey=${key}&i=${imdbID}&plot=full`
       );
       if (!res.ok)
         throw new Error("Something went wrong with fetching movie details");
