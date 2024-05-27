@@ -132,7 +132,7 @@ function Navigation({ setMovies, query, setQuery, searchInputRef }) {
       async function fetchMovies() {
         try {
           const res = await fetch(
-            `http://www.omdbapi.com/?apikey=${key}&s=${query}`
+            `https://www.omdbapi.com/?apikey=${key}&s=${query}`
           );
           if (!res.ok)
             throw new Error("Something went wrong with fetching movies");
